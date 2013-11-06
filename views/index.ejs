@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= title %></title>
+    <style type="text/css">
+        body {
+            font: 0.8em Arial, Helvetica, sans-serif; /* Шрифт на веб-странице */
+            background: #ffffff;
+            color: #000000;
+        }
+
+        a {
+            color: #008BCE;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 0 auto; /* Выравниваем по центру */
+            background: #ffffff;
+        }
+
+        #name {
+            font-size: 2.2em; /* Размер текста */
+            text-align: center;
+            padding: 5px; /* Отступы вокруг текста */
+            background: #ffffff;
+        }
+
+        #links, #association {
+            float: left;
+            width: 200px;
+            padding: 5px;
+        }
+
+        #code {
+            margin: 0 250px;
+            padding: 5px;
+        }
+
+        #links {
+            float: right;
+        }
+
+        h2 {
+            margin: 0 0 1em;
+            text-align: center;
+        }
+
+        #schema {
+            clear: both; /* Отменяем действие float */
+            padding: 5px;
+            padding-left: 220px;
+            padding-right: 220px;
+            text-align: center;
+        }</style>
+</head>
+<body>
+<div id="container">
+    <div id="name"><%= pageName%></div>
+
+    <div id="association"><h2 >Ассоциации</h2>
+        <img src="<%=associationImg%>" alt="association" />
+        <p><%= associationTxt%></p>
+    </div>
+
+    <div id="links"><h2 >Ссылки</h2>
+        <h3>что здесь используется</h3>
+        <% for(var i=0; i<linksTo.length; i++) {%>
+            <li><a href="/<%= linksTo[i] %>"> <%=linksTo[i]%></a></li>
+        <% } %>
+        <h3>где это используется</h3>
+        <% for(var i=0; i<linksOut.length; i++) {%>
+            <li><a href="/<%= linksOut[i] %>"> <%=linksOut[i]%></a></li>
+        <% } %>
+    </div>
+
+    <div id="code"><h2 >Код</h2>
+        <!--<img src="<%=codeImg%> "/>-->
+        <%- codeTxt %>
+    </div>
+
+    <div id="schema"><h2 >Схема</h2>
+        <img src="<%=schemaImg%>" alt="schema" />
+        <p><%= schemaTxt%></p>
+    </div>
+</div>
+</body>
+</html>

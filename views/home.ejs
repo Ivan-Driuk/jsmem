@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>home</title>
+</head>
+<body>
+    <div style="text-align: center"><h1>Проект для души</h1></div>
+    <div style="text-align: center; font-family: Calibri; font-style: italic"><h3>Делать и смотреть с хорошими мыслями и приятной музыкой</h3></div>
+    <div style="margin-left: 250px">
+        <% for(var i =0; i<pages.length; i++) { %>
+            <li>
+                <a style="font-size: 25px "href="/<%= pages[i].pageName %>">
+                    <%= pages[i].pageArea+pages[i].pageName %>
+                </a> </br>
+                <%= pages[i].description %> </br>
+                <%= pages[i].books %>
+            </li>
+        <% } %>
+    </div>
+</body>
+</html>
