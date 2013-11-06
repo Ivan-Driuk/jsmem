@@ -1,1 +1,1 @@
-web: node pereklad.js
+web: node app.js
